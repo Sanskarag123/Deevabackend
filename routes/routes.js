@@ -24,6 +24,7 @@ router.post('/createaccount',async (req,res)=>{
 });
 router.post('/login',async (req,res)=>{
      let userDetail = req.body;
+     console.log("yo")
      try{
          let response =  await authenticate.log(userDetail);
          res.status(200).json(response);

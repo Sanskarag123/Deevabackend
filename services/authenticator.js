@@ -76,10 +76,12 @@ async function createaccount(userdetail) {
   }
 }
 async function login(logindetail) {
+  let userdata;
   try {
-    let response = await (await connect()).findOne({
+     let response = await (await connect()).findOne({
       phonenumber: logindetail.phonenumber,
     });
+    userdata = response;
     // response = await response;
     console.log(response);
     if (Object.keys(response).length === 0) {
@@ -92,7 +94,8 @@ async function login(logindetail) {
     }
     const match = await bcrypt.compare(logindetail.password, response.password);
     if (match) {
-      return generateToken(logindetail.phonenumber);
+      delete userdata.password
+      return {...userdata,...generateToken(logindetail.phonenumber)};
     } else {
       throw new Error(  
          "Email or Password is wrong"
