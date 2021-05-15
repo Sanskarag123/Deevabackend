@@ -79,7 +79,7 @@ async function login(logindetail) {
   let userdata;
   try {
      let response = await (await connect()).findOne({
-      phonenumber: logindetail.phonenumber,
+      phonenumber: parseInt(logindetail.phonenumber),
     });
     userdata = response;
     // response = await response;
@@ -95,7 +95,7 @@ async function login(logindetail) {
     const match = await bcrypt.compare(logindetail.password, response.password);
     if (match) {
       delete userdata.password
-      return {...userdata,...generateToken(logindetail.phonenumber)};
+      return {...userdata,...generateToken(parseInt(logindetail.phonenumber))};
     } else {
       throw new Error(  
          "Email or Password is wrong"
