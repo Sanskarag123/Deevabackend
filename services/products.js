@@ -29,8 +29,17 @@ async function addProduct(product){
        
     }
 }
-async function getProduct(parameters){
+async function getProduct(parameters,tag){
     try{
+        if(parameters.price){
+            parameters.price = parseInt(parameters.price);
+        }
+        if(tag=="greaterthan"){
+           parameters ={price:{$gt:parameters.price}};
+        }
+        if(tag=="lessthan"){
+            parameters ={price:{$lt:parameters.price}};
+         }
         let response = await(await connect()).find(parameters); 
         response = await response.toArray();
         return response;

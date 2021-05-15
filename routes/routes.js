@@ -5,7 +5,7 @@ var router = express.Router();
 const product = require('../services/products');
 const cart = require('../services/cart');
 const msg = require('../constants/messages');
-const { verify } = require('jsonwebtoken');
+
 const { verifytok } = require('../services/authenticator');
 //const { catch } = require('../services/connection');
 //const { catch } = require('../services/connection');
@@ -59,7 +59,16 @@ router.post('/addProduct',async (req,res)=>{
 });
 router.get('/getproduct',async (req,res)=>{
      try{
-          let response = await product.getprod(req.query);
+          let response = await product.getprod(req.query,"");
+          res.status(200).send(response);
+     } catch(err){
+          res.status(400).send(msg.invalidsearch);
+     }
+});
+router.get('/getproduct/:type',async (req,res)=>{
+     try{
+          console.log(req.params.type);
+          let response = await product.getprod(req.query,req.params.type);
           res.status(200).send(response);
      } catch(err){
           res.status(400).send(msg.invalidsearch);
@@ -92,7 +101,26 @@ router.get('/searchprod',async (req,res)=>{
           res.status(501).send({message:err.message});
      }
 });
-
-
+/**********************************************************
+ * 
+ * Category
+ * 
+ ***********************************************************/
+ router.get('/getcategory',async (req,res)=>{
+     try{
+          let response = ["Categpry1","Category2","Category3","Category4"];
+          res.status(200).send({message:response});
+     } catch(err){
+          res.status(400).send(msg.invalidsearch);
+     }
+});
+router.get('/getbanner',async (req,res)=>{
+     try{
+          let response = ["https://i.pinimg.com/236x/73/24/ee/7324eeadcdbfd67c99a395a97f47e370.jpg"];
+          res.status(200).send({message:response});
+     } catch(err){
+          res.status(400).send(msg.invalidsearch);
+     }
+});
 
 module.exports = router;
