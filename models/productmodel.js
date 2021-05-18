@@ -10,7 +10,12 @@ const productschema = new yup.ObjectSchema({
     width:yup.number().min(0).default(0),
     quantityLeft:yup.number().min(0).default(0),
     clothmaterial:yup.string().default('Cotton'),
-    seller:yup.array().min(1).optional()
+    seller:yup.array().min(1).optional(),
+    categoryid:yup.string().required().default(1),
+    discountprice:yup.number().required().default(0),
+    brandid:yup.string().required().default(1),
+    comment:yup.string().required().default("yes"),
+    comment_count:yup.string().required().default(0)
 
 })
 module.exports = productschema;

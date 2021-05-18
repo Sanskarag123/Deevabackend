@@ -23,9 +23,10 @@ app.use(
 app.get('/',function(req,res){
     res.send('connected to Server')
 })
+const PORT = 8080;
+const HOST = '0.0.0.0';
 
-
-app.listen(process.env.PORT||3000,()=> {
+app.listen(process.env.PORT||8080,HOST,()=> {
 console.log("Server listening in port 3000");
 });
 

@@ -1,5 +1,5 @@
 const MongoClient = require( 'mongodb' ).MongoClient;
-const url = "mongodb+srv://san:1234@cluster0.nmxs5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";;
+const url = "mongodb://localhost:27017/deeva";
 
 var _db =  MongoClient.connect( url,  { useNewUrlParser: true,useUnifiedTopology:true }) ;
 

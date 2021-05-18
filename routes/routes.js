@@ -108,16 +108,49 @@ router.get('/searchprod',async (req,res)=>{
  ***********************************************************/
  router.get('/getcategory',async (req,res)=>{
      try{
-          let response = ["Categpry1","Category2","Category3","Category4"];
-          res.status(200).send({message:response});
+          let response = await product.getcat();
+          res.status(200).send({message:"Sucessfull",status:true,data:response});
      } catch(err){
           res.status(400).send(msg.invalidsearch);
      }
 });
+router.post('/addcategory',async (req,res)=>{
+     let body = req.body;
+     try{
+          let response = await product.addcat(body);
+          res.status(200).send(response);
+     } catch(err){
+          res.status(400).send(msg.entryfail);
+     }
+});
+let url = "https://i.pinimg.com/236x/73/24/ee/7324eeadcdbfd67c99a395a97f47e370.jpg";
 router.get('/getbanner',async (req,res)=>{
      try{
-          let response = ["https://i.pinimg.com/236x/73/24/ee/7324eeadcdbfd67c99a395a97f47e370.jpg"];
-          res.status(200).send({message:response});
+          let response = [{type:"Top Banner",id :"5463",image_url:url},{type:"Advertising Banner",id :"54634",image_url:url},{type:"Refer And Earn Banner",id :"54635",image_url:url},{type:"Donate Banner",id :"54639",image_url:url}];
+          res.status(200).send({message:"Sucessfull",status:true,data:response});
+     } catch(err){
+          res.status(400).send(msg.invalidsearch);
+     }
+});
+
+/**********************************************************
+ * 
+ * Brand
+ * 
+ ***********************************************************/
+ router.post('/addbrand',async (req,res)=>{
+     let body = req.body;
+     try{
+          let response = await product.addbrd(body);
+          res.status(200).send(response);
+     } catch(err){
+          res.status(400).send(msg.entryfail);
+     }
+});
+router.get('/getbrand',async (req,res)=>{
+     try{
+          let response = await product.getbrd();
+          res.status(200).send({message:"Sucessfull",status:true,data:response});
      } catch(err){
           res.status(400).send(msg.invalidsearch);
      }
