@@ -60,16 +60,16 @@ router.post('/addProduct',async (req,res)=>{
 router.get('/getproduct',async (req,res)=>{
      try{
           let response = await product.getprod(req.query,"");
-          res.status(200).send(response);
+          res.status(200).send({message:"Sucessfull",status:true,data:response});
      } catch(err){
-          res.status(400).send(msg.invalidsearch);
+          res.status(400).send(err.message);
      }
 });
 router.get('/getproduct/:type',async (req,res)=>{
      try{
           console.log(req.params.type);
           let response = await product.getprod(req.query,req.params.type);
-          res.status(200).send(response);
+          res.status(200).send({message:"Sucessfull",status:true,data:response});
      } catch(err){
           res.status(400).send(msg.invalidsearch);
      }
