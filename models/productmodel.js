@@ -15,7 +15,9 @@ const productschema = new yup.ObjectSchema({
     discountprice:yup.number().required().default(0),
     brandid:yup.string().required().default(1),
     comment:yup.string().required().default("yes"),
-    comment_count:yup.string().required().default(0)
+    comment_count:yup.string().required().default(0),
+    maincolor:yup.array().required().default([]),
+    
 
 })
 module.exports = productschema;

@@ -155,5 +155,27 @@ router.get('/getbrand',async (req,res)=>{
           res.status(400).send(msg.invalidsearch);
      }
 });
+/**********************************************************
+ * 
+ * Story
+ * 
+ ***********************************************************/
+ router.post('/addstory',async (req,res)=>{
+     let body = req.body;
+     try{
+          let response = await product.addstr(body);
+          res.status(200).send(response);
+     } catch(err){
+          res.status(400).send(msg.entryfail);
+     }
+});
+router.get('/getstory',async (req,res)=>{
+     try{
+          let response = await product.getstr();
+          res.status(200).send({message:"Sucessfull",status:true,data:response});
+     } catch(err){
+          res.status(400).send(msg.invalidsearch);
+     }
+});
 
 module.exports = router;

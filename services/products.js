@@ -5,6 +5,7 @@ var db;
 let msg = require("../constants/messages");
 const categorychema = require("../models/categoryschema");
 const brandchema = require("../models/brandmodel");
+const storychema = require("../models/storymodel");
 //const { get } = require('../server');
 async function connect() {
   let res = await conn;
@@ -21,6 +22,12 @@ async function connect1() {
 async function connect2brand() {
   let res = await conn;
   let dbins = await res.db("deeva").collection("brand");
+
+  return dbins;
+}
+async function connect2story() {
+  let res = await conn;
+  let dbins = await res.db("deeva").collection("story");
 
   return dbins;
 }
@@ -50,6 +57,22 @@ async function addCategory(product) {
       throw new Error();
     }
     let response = await (await connect1()).insertOne(castedProduct);
+    if (response.insertedCount == 1) {
+      return msg.addsuccess;
+    }
+    throw new Error(msg.entryfail);
+  } catch (err) {
+    console.log(err);
+    throw new Error(msg.entryfail);
+  }
+}
+async function addStory(product) {
+  try {
+    let castedProduct = storychema.cast(product);
+    if (!storychema.isValid(product)) {
+      throw new Error();
+    }
+    let response = await (await connect2story()).insertOne(castedProduct);
     if (response.insertedCount == 1) {
       return msg.addsuccess;
     }
@@ -102,6 +125,15 @@ async function getcategory(parameters = {}) {
     throw new Error(msg.entryfail);
   }
 }
+async function getstory(parameters = {}) {
+  try {
+    let response = await (await connect2story()).find(parameters);
+    response = await response.toArray();
+    return response;
+  } catch (err) {
+    throw new Error(msg.entryfail);
+  }
+}
 async function getbrand(parameters = {}) {
     try {
       let response = await (await connect2brand()).find(parameters);
@@ -131,5 +163,7 @@ module.exports = {
   addcat: addCategory,
   getcat: getcategory,
   addbrd: addBrand,
-  getbrd:getbrand
+  getbrd:getbrand,
+  getstr:getstory,
+  addstr:addStory
 };
