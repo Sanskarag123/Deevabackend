@@ -120,4 +120,19 @@ async function getUser(phonenumber) {
       throw new Error(err.message);
     }
  }
-module.exports = { creatacc: createaccount, log: login ,verifytok:verifyToken,getU:getUser};
+ async function getCart(phonenumber) { 
+  try{
+    console.log(phonenumber);
+    let response = await(await connect()).findOne({phonenumber:phonenumber},{cart:1});
+    
+    if(Object.keys(response).length==0){
+      throw new Error('No record found for this user')
+    } else {
+      console.log(response);
+      return response;
+    }
+  } catch(err){
+    throw new Error(err.message);
+  }
+}
+module.exports = { creatacc: createaccount, log: login ,verifytok:verifyToken,getU:getUser,getcart:getCart};

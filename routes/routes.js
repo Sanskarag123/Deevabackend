@@ -101,6 +101,19 @@ router.get('/searchprod',async (req,res)=>{
           res.status(501).send({message:err.message});
      }
 });
+router.get('/getcart',async (req,res)=>{
+     try{
+          console.log(req.headers);
+          let number  = await verifytok(req.headers.authorization);
+          //console.log(body)
+          let response = await authenticate.getcart(number);
+          data = response.cart;
+          res.status(200).send({message:"Sucessfull",status:200,data:data});
+     } catch(err){
+          res.status(400).send({message:err.message});
+     }
+});
+
 /**********************************************************
  * 
  * Category
@@ -172,6 +185,14 @@ router.get('/getbrand',async (req,res)=>{
 router.get('/getstory',async (req,res)=>{
      try{
           let response = await product.getstr();
+          res.status(200).send({message:"Sucessfull",status:true,data:response});
+     } catch(err){
+          res.status(400).send(msg.invalidsearch);
+     }
+});
+router.get('/getspecials',async (req,res)=>{
+     try{
+          let response = {message:"Sucessfull", status:200,data:[{category_id:1,category_name:'Chandei'},{category_id:2,category_name:'Salvon'}]};
           res.status(200).send({message:"Sucessfull",status:true,data:response});
      } catch(err){
           res.status(400).send(msg.invalidsearch);
