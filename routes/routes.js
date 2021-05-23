@@ -113,6 +113,17 @@ router.get('/getcart',async (req,res)=>{
           res.status(400).send({message:err.message});
      }
 });
+router.get('/getwardrobe',async (req,res)=>{
+     try{
+       
+          //console.log(body)
+          let response = [{wardrobeid:"1"}];
+          data = response.cart;
+          res.status(200).send({message:"Sucessfull",status:200,data:response});
+     } catch(err){
+          res.status(400).send({message:err.message});
+     }
+});
 
 /**********************************************************
  * 
