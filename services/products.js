@@ -103,11 +103,20 @@ async function getProduct(parameters, tag) {
     if (parameters.price) {
       parameters.price = parseInt(parameters.price);
     }
+    if (parameters.price1) {
+      parameters.price1 = parseInt(parameters.price1);
+    }
+    if (parameters.price2) {
+      parameters.price2 = parseInt(parameters.price2);
+    }
     if (tag == "greaterthan") {
       parameters = { price: { $gt: parameters.price } };
     }
     if (tag == "lessthan") {
       parameters = { price: { $lt: parameters.price } };
+    }
+    if (tag == "between") {
+      parameters = { price: { $lt: parameters.price2,$gt:parameters.price1 } };
     }
     let response = await (await connect()).find(parameters);
     response = await response.toArray();
@@ -156,6 +165,34 @@ async function searchProduct(queryword, limit = 10) {
     throw new Error(msg.entryfail);
   }
 }
+async function addcomment(phonnumber,details) {
+  try{
+      console.log(phonnumber);
+      let details1 = {...details};
+      delete details1.productId;
+let response = await(await connect()).updateOne({
+      productId:details.productId},
+          {
+             $push:{comment:{...details1}}
+          },
+      );
+      console.log(response,"yoo");
+         // let response1 = await(await connect()).updateOne({phonenumber:phonnumber},{$push:{cart:productid}});
+        //  console.log(response1);
+          if(response.modifiedCount!=1){
+              throw new Error("Failed to add to Comment");
+          }
+      
+  } 
+  catch(err){
+      if(err.message == "The positional operator did not find the match needed from the query."){
+
+      }
+      throw new Error(err.message);
+  }
+  
+}
+
 module.exports = {
   addProduct1: addProduct,
   getprod: getProduct,
@@ -165,5 +202,6 @@ module.exports = {
   addbrd: addBrand,
   getbrd:getbrand,
   getstr:getstory,
-  addstr:addStory
+  addstr:addStory,
+  addcomm:addcomment
 };

@@ -5,6 +5,7 @@ userModel = new yup.ObjectSchema({
     phonenumber:yup.number().required("Phone Number is Required"),
     password:yup.string(),
     email:yup.string(),
+    addresses:yup.array(),
     // addresses:yup.array().of({
     //     addressline1:yup.string().required('Address line 1 is required'),
     //     addressline2:yup.string(),
@@ -12,10 +13,11 @@ userModel = new yup.ObjectSchema({
     //     state:yup.string().required('State is required'),
     //     pincode:yup.number().required('Pincode is reuired')
     // }).optional(),
-defaulAddressIndex:yup.array(),
+defaulAddressIndex:yup.number().default(1),
 referralCode:yup.string().required().default('name'),
 orderhistory:yup.array().default([]),
-cart:yup.array().default([])
+cart:yup.array().default([]),
+
 
 })
 module.exports = userModel;

@@ -5,6 +5,7 @@ var router = express.Router();
 const product = require('../services/products');
 const cart = require('../services/cart');
 const msg = require('../constants/messages');
+const pytmchksum = require('../services/payment')
 
 const { verifytok } = require('../services/authenticator');
 //const { catch } = require('../services/connection');
@@ -207,6 +208,75 @@ router.get('/getspecials',async (req,res)=>{
           res.status(200).send({message:"Sucessfull",status:true,data:response});
      } catch(err){
           res.status(400).send(msg.invalidsearch);
+     }
+});
+router.get('/getforyou',async (req,res)=>{
+     try{
+          console.log(req.headers);
+          let number  = await verifytok(req.headers.authorization);
+          //console.log(body)
+         
+          let data = ['_zgzcini7a'];
+          res.status(200).send({message:"Sucessfull",status:200,data:data});
+     } catch(err){
+          
+          res.status(400).send({message:err.message});
+     }
+});
+/**********************************************************
+ * 
+ *Order Hosttory
+ * 
+ ***********************************************************/
+ router.post('/addorderhistory',async (req,res)=>{
+     try{
+          console.log(req.headers);
+          let number  = await verifytok(req.headers.authorization);
+          //console.log(body)
+         cart.addtohist(number,'fdhsjd',req.body);
+          res.status(200).send({message:"Sucessfull",status:200});
+     } catch(err){
+          res.status(400).send({message:err.message});
+     }
+});
+router.get('/getorderhistory',async (req,res)=>{
+     try{
+          console.log(req.headers);
+          let number  = await verifytok(req.headers.authorization);
+          //console.log(body)
+          let response = await cart.gethist(number);
+          data = response;
+          res.status(200).send({message:"Sucessfull",status:200,data:data});
+     } catch(err){
+          res.status(400).send({message:err.message});
+     }
+});
+router.get('/getchksum',async (req,res)=>{
+   let result =   await pytmchksum();
+   console.log(result);
+});
+router.post('/addcomment',async (req,res)=>{
+     try{
+          console.log(req.headers);
+          let number  = await verifytok(req.headers.authorization);
+          //console.log(body)
+          let response = await product.addcomm(number,req.body);
+          data = response;
+          res.status(200).send({message:"Sucessfull",status:200,data:data});
+     } catch(err){
+          res.status(400).send({message:err.message});
+     }
+});
+router.post('/addaddress',async (req,res)=>{
+     try{
+          console.log(req.headers);
+          let number  = await verifytok(req.headers.authorization);
+          //console.log(body)
+          let response = await cart.address(number,req.body);
+          data = response;
+          res.status(200).send({message:"Sucessfull",status:200,data:data});
+     } catch(err){
+          res.status(400).send({message:err.message});
      }
 });
 

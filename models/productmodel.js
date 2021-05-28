@@ -14,10 +14,9 @@ const productschema = new yup.ObjectSchema({
     categoryid:yup.string().required().default(1),
     discountprice:yup.number().required().default(0),
     brandid:yup.string().required().default(1),
-    comment:yup.string().required().default("yes"),
+    comment:yup.array().default([{username:"Ankush",description:"Vergy good quality"}]),
     comment_count:yup.string().required().default(0),
     maincolor:yup.array().required().default([]),
-    
-
+    wardrobeid:yup.string().required().default("shfjdf")
 })
 module.exports = productschema;

@@ -32,7 +32,7 @@ try{
     try{
     token2 = token.split(" ")[1];
     } catch{
-        throw new Error(JSON.stringify({message:'Invalid Token',code:401}));
+        throw new Error("unauthorized");
     }
    
     const tokencorrect = jwt.verify(token2,"deevbakend");
