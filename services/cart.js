@@ -117,5 +117,20 @@ let response = await(await connect()).updateOne({
     }
     
 }
+async function clearcart(phonenumber) { 
+    try{
+      console.log(phonenumber);
+      let response = await(await connect()).updateOne({phonenumber:phonenumber},{$set:{cart:[]}});
+      
+      if(Object.keys(response).length==0){
+        throw new Error('No record found for this user')
+      } else {
+        console.log(response);
+        return response;
+      }
+    } catch(err){
+      throw new Error(err.message);
+    }
+  }
 
-module.exports = {addtoc:addtocart,addtohist:addorder,gethist:getOrderHistory,address:addaddress};
+module.exports = {addtoc:addtocart,addtohist:addorder,gethist:getOrderHistory,address:addaddress,clearcartt:clearcart};

@@ -114,6 +114,18 @@ router.get('/getcart',async (req,res)=>{
           res.status(400).send({message:err.message});
      }
 });
+router.get('/clearcart',async (req,res)=>{
+     try{
+          console.log(req.headers);
+          let number  = await verifytok(req.headers.authorization);
+          //console.log(body)
+          let response = await cart.clearcartt(number);
+          
+          res.status(200).send({message:"Sucessfull",status:200});
+     } catch(err){
+          res.status(400).send({message:err.message});
+     }
+});
 router.get('/getwardrobe',async (req,res)=>{
      try{
        
