@@ -130,7 +130,7 @@ router.get('/getwardrobe',async (req,res)=>{
      try{
        
           //console.log(body)
-          let response = [{wardrobeid:"1"}];
+          let response = [{wardrobeid:"1",wardrobename:'newWarderobe',image:"https://cdn1.ninecolours.com/image/cache/products-2018/August-2019/Chiffon-Designer-Saree-In-Olive-Green-Colour-SR0062923-A-1200x1799.jpg"}];
           data = response.cart;
           res.status(200).send({message:"Sucessfull",status:200,data:response});
      } catch(err){
