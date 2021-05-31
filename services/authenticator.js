@@ -108,7 +108,7 @@ async function login(logindetail) {
 async function getUser(phonenumber) { 
     try{
       console.log(phonenumber);
-      let response = await(await connect()).findOne({phonenumber:phonenumber},{referralCode:1,phonenumber:1,name:1,cart:1});
+      let response = await(await connect()).findOne({phonenumber:phonenumber},{referralCode:1,phonenumber:1,name:1,cart:1,addresses:1});
       
       if(Object.keys(response).length==0){
         throw new Error('No record found for this user')

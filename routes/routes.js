@@ -44,6 +44,17 @@ router.get('/getuserdetail',async (req,res)=>{
           res.status(400).send({message:err.message});
      }
 });
+router.get('/getaddress',async (req,res)=>{
+     try{
+          console.log(req.headers);
+          let number  = await verifytok(req.headers.authorization);
+          //console.log(body)
+          let response = await authenticate.getU(number);
+          res.status(200).send(response.addresses);
+     } catch(err){
+          res.status(400).send({message:err.message});
+     }
+});
 /*************************************************************************
  * 
  * Product Apis
@@ -138,6 +149,8 @@ router.get('/getwardrobe',async (req,res)=>{
      }
 });
 
+
+
 /**********************************************************
  * 
  * Category
@@ -229,6 +242,78 @@ router.get('/getforyou',async (req,res)=>{
           //console.log(body)
          
           let data = ['_zgzcini7a'];
+          res.status(200).send({message:"Sucessfull",status:200,data:data});
+     } catch(err){
+          
+          res.status(400).send({message:err.message});
+     }
+});
+router.get('/getinterest',async (req,res)=>{
+     let profuct =  {
+            "_id": "60a6510153d894001539bf5a",
+            "comment_count": 0,
+            "comment": "yes",
+            "brandid": 1,
+            "wardrobeid": "1",
+            "discountprice": 0,
+            "categoryid": 1,
+            "clothmaterial": "Cotton",
+            "quantityLeft": 0,
+            "width": 0,
+            "length": 0,
+            "price": 5000,
+            "name": "savni",
+            "productId": "_zgzcini7a",
+            "imageurls": [
+                "https://i.pinimg.com/236x/73/24/ee/7324eeadcdbfd67c99a395a97f47e370.jpg"
+            ],
+            "maincolor": [
+                "yellow",
+                "purple"
+            ]
+        };
+     try{
+          console.log(req.headers);
+          let number  = await verifytok(req.headers.authorization);
+          //console.log(body)
+         
+          let data = [profuct];
+          res.status(200).send({message:"Sucessfull",status:200,data:data});
+     } catch(err){
+          
+          res.status(400).send({message:err.message});
+     }
+});
+router.get('/getnewproduct',async (req,res)=>{
+     let profuct =  {
+            "_id": "60a6510153d894001539bf5a",
+            "comment_count": 0,
+            "comment": "yes",
+            "brandid": 1,
+            "wardrobeid": "1",
+            "discountprice": 0,
+            "categoryid": 1,
+            "clothmaterial": "Cotton",
+            "quantityLeft": 0,
+            "width": 0,
+            "length": 0,
+            "price": 5000,
+            "name": "savni",
+            "productId": "_zgzcini7a",
+            "imageurls": [
+                "https://i.pinimg.com/236x/73/24/ee/7324eeadcdbfd67c99a395a97f47e370.jpg"
+            ],
+            "maincolor": [
+                "yellow",
+                "purple"
+            ]
+        };
+     try{
+          console.log(req.headers);
+          let number  = await verifytok(req.headers.authorization);
+          //console.log(body)
+         
+          let data = [profuct];
           res.status(200).send({message:"Sucessfull",status:200,data:data});
      } catch(err){
           
