@@ -39,6 +39,11 @@ router.get('/getuserdetail',async (req,res)=>{
           let number  = await verifytok(req.headers.authorization);
           //console.log(body)
           let response = await authenticate.getU(number);
+          if(!!response.description){
+               console.log('nothing')
+          } else {
+               response.description = "Just a regular buyer";
+          }
           res.status(200).send(response);
      } catch(err){
           res.status(400).send({message:err.message});
@@ -72,6 +77,7 @@ router.post('/addProduct',async (req,res)=>{
 router.get('/getproduct',async (req,res)=>{
      try{
           let response = await product.getprod(req.query,"");
+          response.topreviews = [{username:"Ankush",description:"A genuine product"}]
           res.status(200).send({message:"Sucessfull",status:true,data:response});
      } catch(err){
           res.status(400).send(err.message);
@@ -81,6 +87,7 @@ router.get('/getproduct/:type',async (req,res)=>{
      try{
           console.log(req.params.type);
           let response = await product.getprod(req.query,req.params.type);
+          response.topreviews = [{username:"Ankush",description:"A genuine product"}]
           res.status(200).send({message:"Sucessfull",status:true,data:response});
      } catch(err){
           res.status(400).send(msg.invalidsearch);

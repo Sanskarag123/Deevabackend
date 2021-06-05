@@ -17,7 +17,7 @@ defaulAddressIndex:yup.number().default(1),
 referralCode:yup.string().required().default('name'),
 orderhistory:yup.array().default([]),
 cart:yup.array().default([]),
-description:yup.string().default("")
+description:yup.string().default("A regular buyer who is interested in chanderi sarres")
 
 
 })
