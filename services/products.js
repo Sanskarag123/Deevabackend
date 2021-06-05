@@ -118,6 +118,10 @@ async function getProduct(parameters, tag) {
     if (tag == "between") {
       parameters = { price: { $lt: parameters.price2,$gt:parameters.price1 } };
     }
+    if(!!parameters.categoryid){
+      parameters.categoryid = parseInt(parameters.categoryid);
+    }
+    console.log(parameters);
     let response = await (await connect()).find(parameters);
     response = await response.toArray();
     return response;

@@ -17,6 +17,7 @@ defaulAddressIndex:yup.number().default(1),
 referralCode:yup.string().required().default('name'),
 orderhistory:yup.array().default([]),
 cart:yup.array().default([]),
+description:yup.string().default("")
 
 
 })

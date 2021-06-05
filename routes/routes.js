@@ -285,35 +285,237 @@ router.get('/getinterest',async (req,res)=>{
      }
 });
 router.get('/getnewproduct',async (req,res)=>{
-     let profuct =  {
-            "_id": "60a6510153d894001539bf5a",
+     let profuct =   [
+        {
+            "_id": "60ba68df856a8d55a878050a",
+            "costprice": 750,
+            "specials": "true",
+            "trending": "true",
+            "wardrobeid": "WA_epr0xgwux",
+            "maincolor": [
+                "green",
+                "navy blue"
+            ],
             "comment_count": 0,
-            "comment": "yes",
+            "comment": [
+                {
+                    "username": "Ankush",
+                    "description": "Vergy good quality"
+                }
+            ],
             "brandid": 1,
-            "wardrobeid": "1",
             "discountprice": 0,
             "categoryid": 1,
             "clothmaterial": "Cotton",
             "quantityLeft": 0,
             "width": 0,
             "length": 0,
-            "price": 5000,
-            "name": "savni",
-            "productId": "_zgzcini7a",
+            "price": 1125,
+            "type": "MOONGA SILK - Patola rich",
+            "name": "green and navy blue moonga silk saree with jacquard border",
+            "productId": "_y7kyg6qmg1",
+            "description": "Green and navyblue moonga silk saree with navy blue and gold silk blouse. \nBlouse Colour: navy blue. \nPatola rich. Embellished with woven zari work. \nSaree with Sweetheart Neckline, Half Sleeve. The blended silk based green color saree is crafted with self resham work and golden zari made motifs all over the body. The navy blue color pallu have golden zari with resham made designer work. \nWork Type Woven Best Design All Over Finish Type Soft \\ Comfortable To Wear\nEye Catching Colors Occasion Party, Festive, Wedding Wear Best Gift For Your Loved Ones",
+            "Link": "https://drive.google.com/folderview?id=19Q6i_i_gChZjRGGEy1NibM5Do9vZ7Xlj",
             "imageurls": [
-                "https://i.pinimg.com/236x/73/24/ee/7324eeadcdbfd67c99a395a97f47e370.jpg"
-            ],
-            "maincolor": [
-                "yellow",
-                "purple"
+                "https://lh3.googleusercontent.com/d/1OwOwoC82eWkD_qynY2Ruq3fn7rWvizsb",
+                "https://lh3.googleusercontent.com/d/13JfKvrDuPTcOhwlPSZUNcLWSCS-7qvUk",
+                "https://lh3.googleusercontent.com/d/1HSSZPNT-I75ZBic_hoqkRRrTbfn3Xadb",
+                "https://lh3.googleusercontent.com/d/19FlBdXREJoHIWoSeOgH7NojwQkb6VxeT",
+                "https://lh3.googleusercontent.com/d/1SjNfbe-ir25mh2p1__eNmoKNspmU9i6Y",
+                "https://lh3.googleusercontent.com/d/1F81Z3cx5Vw3x6FcmBNWfAkgBODdYf4Gj",
+                "https://lh3.googleusercontent.com/d/13VTJoyi6QqeEEIjZviQ7pGeE-ooGYlsf"
             ]
-        };
+        },
+        {
+            "_id": "60ba68ef856a8d55a878050b",
+            "costprice": 750,
+            "wardrobeid": "WA_epr0xgwux",
+            "trending": "true",
+            "maincolor": [
+                "light blue",
+                "navy blue"
+            ],
+            "comment_count": 0,
+            "comment": [
+                {
+                    "username": "Ankush",
+                    "description": "Vergy good quality"
+                }
+            ],
+            "brandid": 1,
+            "discountprice": 0,
+            "categoryid": 1,
+            "clothmaterial": "Cotton",
+            "quantityLeft": 0,
+            "width": 0,
+            "length": 0,
+            "price": 1125,
+            "type": "MOONGA SILK - Patola rich",
+            "name": "light blue and navy blue moonga silk saree with jacquard border",
+            "productId": "_y7kyg6qmg2",
+            "description": "Light blue and navy blue moonga silk saree with navy blue and gold silk blouse. \nBlouse Colour: navy blue. \nPatola rich. Embellished with woven zari work. \nSaree with Sweetheart Neckline, Half Sleeve. The blended silk based blue color saree is crafted with self resham work and golden zari made motifs all over the body. The navy blue color pallu have golden zari with resham made designer work. \nWork Type Woven Best Design All Over Finish Type Soft \\ Comfortable To Wear\nEye Catching Colors Occasion Party, Festive, Wedding Wear Best Gift For Your Loved Ones",
+            "Link": "https://drive.google.com/folderview?id=19Sx2qXkCxXKzuLOSATOxr9862bR2K9pL",
+            "imageurls": [
+                "https://lh3.googleusercontent.com/d/1Sv3EUAxFo6VOFaP_gx68O48vdwK66xc3",
+                "https://lh3.googleusercontent.com/d/1yG73eyGLtsaVR48iI9f_p25XmEUaZrd4",
+                "https://lh3.googleusercontent.com/d/1TSMfExhE0RnVSUGdlP3SYtWjqEjqDHCO",
+                "https://lh3.googleusercontent.com/d/1B5HqFp8zd-WftKoIpVrB9S-oH7o0t09m",
+                "https://lh3.googleusercontent.com/d/1wvlftlY6B2MzoYVhK6PupKuD4U8I3xbw",
+                "https://lh3.googleusercontent.com/d/1SBCR9p6n6t2P-kAhFbvcpTaWUGIZHv8_"
+            ]
+        },
+        {
+            "_id": "60ba6920856a8d55a878050e",
+            "costprice": 750,
+            "trending": "true",
+            "wardrobeid": "WA_epr0xgwux",
+            "maincolor": [
+                "orange",
+                "black"
+            ],
+            "comment_count": 0,
+            "comment": [
+                {
+                    "username": "Ankush",
+                    "description": "Vergy good quality"
+                }
+            ],
+            "brandid": 1,
+            "discountprice": 0,
+            "categoryid": 1,
+            "clothmaterial": "Cotton",
+            "quantityLeft": 0,
+            "width": 0,
+            "length": 0,
+            "price": 1125,
+            "type": "MOONGA SILK - Patola rich",
+            "name": "orange and black moonga silk saree with jacquard border",
+            "productId": "_y7kyg6qmg5",
+            "description": "Orange and black moonga silk saree with black and gold silk blouse. \nBlouse Colour: black. \nPatola rich. Embellished with woven zari work. \nSaree with Sweetheart Neckline, Half Sleeve. The blended silk based orange color saree is crafted with self resham work and golden zari made motifs all over the body. The black color pallu have golden zari with resham made designer work. \nWork Type Woven Best Design All Over Finish Type Soft \\ Comfortable To Wear\nEye Catching Colors Occasion Party, Festive, Wedding Wear Best Gift For Your Loved Ones",
+            "Link": "https://drive.google.com/folderview?id=19jwh0BV0lpb7dv544stgtK0uFHFCohXg",
+            "imageurls": [
+                "https://lh3.googleusercontent.com/d/1AKQSCW7TF8XI8eycwl0K0VReBHTpTreD",
+                "https://lh3.googleusercontent.com/d/1rkZsm9ISOtwc0eJoK1Z_K4TKcECLN2Ye",
+                "https://lh3.googleusercontent.com/d/1sErOABBoR7feYWe7Ki5kXhnf52xudMwu",
+                "https://lh3.googleusercontent.com/d/12eceiKq9qG7VJrl7jLud1iMeGZgVe7_v",
+                "https://lh3.googleusercontent.com/d/1hCApnRnbvpUyvRfTBhnARGRRwa6P8N_1",
+                "https://lh3.googleusercontent.com/d/1b3DYNZRiwl84344ftQYw518cY3vrZtEU"
+            ]
+        },
+        {
+            "_id": "60ba6a59856a8d55a878050f",
+            "costprice": 750,
+            "wardrobeid": "WA_epr0xgwux",
+            "maincolor": [],
+            "comment_count": 0,
+            "trending": "true",
+            "comment": [
+                {
+                    "username": "Ankush",
+                    "description": "Vergy good quality"
+                }
+            ],
+            "brandid": 1,
+            "discountprice": 0,
+            "categoryid": "2",
+            "clothmaterial": "Cotton",
+            "quantityLeft": 0,
+            "width": 0,
+            "length": 0,
+            "price": 1125,
+            "type": "MOONGA SILK - Patola rich",
+            "name": "green and navy blue moonga silk saree with jacquard border",
+            "productId": "_y7kyg6qmg6",
+            "description": "Green and navyblue moonga silk saree with navy blue and gold silk blouse. \nBlouse Colour: navy blue. \nPatola rich. Embellished with woven zari work. \nSaree with Sweetheart Neckline, Half Sleeve. The blended silk based green color saree is crafted with self resham work and golden zari made motifs all over the body. The navy blue color pallu have golden zari with resham made designer work. \nWork Type Woven Best Design All Over Finish Type Soft \\ Comfortable To Wear\nEye Catching Colors Occasion Party, Festive, Wedding Wear Best Gift For Your Loved Ones",
+            "Link": "https://drive.google.com/folderview?id=19Q6i_i_gChZjRGGEy1NibM5Do9vZ7Xlj",
+            "imageurls": [
+                "https://lh3.googleusercontent.com/d/1OwOwoC82eWkD_qynY2Ruq3fn7rWvizsb",
+                "https://lh3.googleusercontent.com/d/13JfKvrDuPTcOhwlPSZUNcLWSCS-7qvUk",
+                "https://lh3.googleusercontent.com/d/1HSSZPNT-I75ZBic_hoqkRRrTbfn3Xadb",
+                "https://lh3.googleusercontent.com/d/19FlBdXREJoHIWoSeOgH7NojwQkb6VxeT",
+                "https://lh3.googleusercontent.com/d/1SjNfbe-ir25mh2p1__eNmoKNspmU9i6Y",
+                "https://lh3.googleusercontent.com/d/1F81Z3cx5Vw3x6FcmBNWfAkgBODdYf4Gj",
+                "https://lh3.googleusercontent.com/d/13VTJoyi6QqeEEIjZviQ7pGeE-ooGYlsf"
+            ]
+        },
+        {
+            "_id": "60ba6a79856a8d55a8780511",
+            "costprice": 750,
+            "wardrobeid": "WA_epr0xgwux",
+            "maincolor": [],
+            "comment_count": 0,
+            "trending": "true",
+            "comment": [
+                {
+                    "username": "Ankush",
+                    "description": "Vergy good quality"
+                }
+            ],
+            "brandid": 1,
+            "discountprice": 0,
+            "categoryid": "2",
+            "clothmaterial": "Cotton",
+            "quantityLeft": 0,
+            "width": 0,
+            "length": 0,
+            "price": 1125,
+            "type": "MOONGA SILK - Patola rich",
+            "name": "red and navy blue moonga silk saree with jacquard border",
+            "productId": "_y7kyg6qmg",
+            "description": "Red and navy blue moonga silk saree with navy blue and gold silk blouse. \nBlouse Colour: navy blue. \nPatola rich. Embellished with woven zari work. \nSaree with Sweetheart Neckline, Half Sleeve. The blended silk based red color saree is crafted with self resham work and golden zari made motifs all over the body. The navy blue color pallu have golden zari with resham made designer work. \nWork Type Woven Best Design All Over Finish Type Soft \\ Comfortable To Wear\nEye Catching Colors Occasion Party, Festive, Wedding Wear Best Gift For Your Loved Ones",
+            "Link": "https://drive.google.com/folderview?id=19XfFk-YEIZMZ7uqJ4e-of-id_thaxp-v",
+            "imageurls": [
+                "https://lh3.googleusercontent.com/d/1tAAYfLxZHh73vH-EW3a263L0FOAsYKD4",
+                "https://lh3.googleusercontent.com/d/1MXsboegOcNLLgrqCorkB0Z-SPFrIzpLL",
+                "https://lh3.googleusercontent.com/d/1jhIvc23dHCvYVBz6j6EXyPmavsrJMdfm",
+                "https://lh3.googleusercontent.com/d/1aidfesGe2bvUIKXcaIUx81hkktNu9pWx",
+                "https://lh3.googleusercontent.com/d/1MqQoaGxAGvMI8TGnR5wpHr3pKpamp0b1",
+                "https://lh3.googleusercontent.com/d/1FszOiO22n2eRrmNHNYF9lyX2zz49Xkoz"
+            ]
+        },
+        {
+            "_id": "60ba6a90856a8d55a8780513",
+            "costprice": 750,
+            "specials": "true",
+            "trending": "true",
+            "wardrobeid": "WA_epr0xgwux",
+            "maincolor": [],
+            "comment_count": 0,
+            "comment": [
+                {
+                    "username": "Ankush",
+                    "description": "Vergy good quality"
+                }
+            ],
+            "brandid": 1,
+            "discountprice": 0,
+            "categoryid": "2",
+            "clothmaterial": "Cotton",
+            "quantityLeft": 0,
+            "width": 0,
+            "length": 0,
+            "price": 1125,
+            "type": "MOONGA SILK - Patola rich",
+            "name": "orange and black moonga silk saree with jacquard border",
+            "productId": "_y7kyg6qmg9",
+            "description": "Orange and black moonga silk saree with black and gold silk blouse. \nBlouse Colour: black. \nPatola rich. Embellished with woven zari work. \nSaree with Sweetheart Neckline, Half Sleeve. The blended silk based orange color saree is crafted with self resham work and golden zari made motifs all over the body. The black color pallu have golden zari with resham made designer work. \nWork Type Woven Best Design All Over Finish Type Soft \\ Comfortable To Wear\nEye Catching Colors Occasion Party, Festive, Wedding Wear Best Gift For Your Loved Ones",
+            "Link": "https://drive.google.com/folderview?id=19jwh0BV0lpb7dv544stgtK0uFHFCohXg",
+            "imageurls": [
+                "https://lh3.googleusercontent.com/d/1AKQSCW7TF8XI8eycwl0K0VReBHTpTreD",
+                "https://lh3.googleusercontent.com/d/1rkZsm9ISOtwc0eJoK1Z_K4TKcECLN2Ye",
+                "https://lh3.googleusercontent.com/d/1sErOABBoR7feYWe7Ki5kXhnf52xudMwu",
+                "https://lh3.googleusercontent.com/d/12eceiKq9qG7VJrl7jLud1iMeGZgVe7_v",
+                "https://lh3.googleusercontent.com/d/1hCApnRnbvpUyvRfTBhnARGRRwa6P8N_1",
+                "https://lh3.googleusercontent.com/d/1b3DYNZRiwl84344ftQYw518cY3vrZtEU"
+            ]
+        }
+    ];
      try{
           console.log(req.headers);
           let number  = await verifytok(req.headers.authorization);
           //console.log(body)
          
-          let data = [profuct];
+          let data = profuct;
           res.status(200).send({message:"Sucessfull",status:200,data:data});
      } catch(err){
           
